@@ -1,2 +1,5 @@
 # 6STR.github.io
-this is a calculator proyect for rp fivem server.
+This is a calculator proyect for Fivem RP Server.
+
+Credits: 
+Video: Logic-Films
