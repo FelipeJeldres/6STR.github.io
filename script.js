@@ -49,7 +49,7 @@ function calcularTotalHerramientas() {
 
 // Función para mostrar el resultado en la página
 function mostrarResultado() {
-    const totalMecanica = Math.round(calcularTotalMecanica()*1.1);
+    const totalMecanica = calcularTotalMecanica()*1.1.toFixed(0);
     const totalHerramientas = calcularTotalHerramientas();
     const totalGeneral = totalMecanica + totalHerramientas;
 
