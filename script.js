@@ -1,17 +1,17 @@
 // Función para calcular el costo total de los productos mecánicos
 function calcularTotalMecanica() {
     const productosMecanicos = [
-        { id: 'puerta', precio: 150 },
-        { id: 'neumatico', precio: 150 },
-        { id: 'maletero', precio: 150 },
-        { id: 'capot', precio: 150 },
-        { id: 'discoEmbrague', precio: 450 },
-        { id: 'radiador', precio: 450 },
-        { id: 'filtroCombustible', precio: 450 },
-        { id: 'chapasMetalicas', precio: 150 },
-        { id: 'partesMotor', precio: 150 },
+        { id: 'puerta', precio: 100 },
+        { id: 'neumatico', precio: 100 },
+        { id: 'maletero', precio: 100 },
+        { id: 'capot', precio: 100 },
+        { id: 'discoEmbrague', precio: 300 },
+        { id: 'radiador', precio: 300 },
+        { id: 'filtroCombustible', precio: 300 },
+        { id: 'chapasMetalicas', precio: 100 },
+        { id: 'partesMotor', precio: 100 },
         { id: 'ejeTransmision', precio: 150 },
-        { id: 'pastillasFreno', precio: 450 }
+        { id: 'pastillasFreno', precio: 300 }
     ];
 
     let total = 0;
@@ -64,6 +64,3 @@ botonCalcular.addEventListener('click', mostrarResultado);
 
 const botonCalcular2 = document.querySelector('.btn-dark');
 botonCalcular2.addEventListener('click', mostrarResultado);
-
-
-
