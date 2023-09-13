@@ -32,7 +32,7 @@ function calcularTotalHerramientas() {
         { id: 'ganzua', precio: 500 },
         { id: 'gato', precio: 100 },
         { id: 'kitReparacion', precio: 400 },
-        { id: 'kitReparacionAvanzado', precio: 1500 }
+        { id: 'kitReparacionAvanzado', precio: 750 }
     ];
 
     let total = 0;
