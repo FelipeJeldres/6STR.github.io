@@ -30,6 +30,7 @@ function calcularTotalMecanica() {
 function calcularTotalHerramientas() {
     const productosHerramientas = [
         { id: 'ganzua', precio: 500 },
+        { id: 'ganzuaavanzada', precio: 800 },
         { id: 'gato', precio: 100 },
         { id: 'kitReparacion', precio: 400 },
         { id: 'kitReparacionAvanzado', precio: 750 }
