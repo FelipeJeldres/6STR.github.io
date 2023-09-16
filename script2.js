@@ -41,37 +41,37 @@ const materiales = {
 
 function calcularPrecio() {
     // Obtener la cantidad de cada item desde los campos de entrada
-    const cantidadRuedas = parseFloat(document.getElementById('ruedas').value);
-    const cantidadGuardabarros = parseFloat(document.getElementById('guardabarros').value);
-    const cantidadFaldones = parseFloat(document.getElementById('faldones').value);
-    const cantidadParachoquesFrontal = parseFloat(document.getElementById('parachoques-frontal').value);
-    const cantidadAleron = parseFloat(document.getElementById('aleron').value);
-    const cantidadSuspension = parseFloat(document.getElementById('suspension').value);
-    const cantidadFrenos = parseFloat(document.getElementById('frenos').value);
-    const cantidadParachoquesTrasero = parseFloat(document.getElementById('parachoques-trasero').value);
-    const cantidadMotor = parseFloat(document.getElementById('motor').value);
-    const cantidadCapot = parseFloat(document.getElementById('capot').value);
-    const cantidadTurbo = parseFloat(document.getElementById('turbo').value);
-    const cantidadBocina = parseFloat(document.getElementById('bocina').value);
-    const cantidadCajaDeCambios = parseFloat(document.getElementById('caja-de-cambios').value);
-    const cantidadXenon = parseFloat(document.getElementById('xenon').value);
-    const cantidadVidriosPolarizados = parseFloat(document.getElementById('vidrios-polarizados').value);
-    const cantidadDisenoDeNeon = parseFloat(document.getElementById('diseno-de-neon').value);
-    const cantidadPlacaNueva = parseFloat(document.getElementById('placa-nueva').value);
-    const cantidadExtras = parseFloat(document.getElementById('extras').value);
-    const cantidadLivery = parseFloat(document.getElementById('livery').value);
-    const cantidadPinturaPrimaria = parseFloat(document.getElementById('pintura-primaria').value);
-    const cantidadPinturaSecundaria = parseFloat(document.getElementById('pintura-secundaria').value);
-    const cantidadTipoDePintura = parseFloat(document.getElementById('tipo-de-pintura').value);
-    const cantidadVolante = parseFloat(document.getElementById('volante').value);
-    const cantidadColorDeHumo = parseFloat(document.getElementById('color-de-humo').value);
-    const cantidadInterior = parseFloat(document.getElementById('interior').value);
-    const cantidadTablero = parseFloat(document.getElementById('tablero').value);
-    const cantidadNeonesActivos = parseFloat(document.getElementById('neones-activos').value);
-    const cantidadColorDeXenon = parseFloat(document.getElementById('color-de-xenon').value);
-    const cantidadColorNeon = parseFloat(document.getElementById('color-neon').value);
-    const cantidadSprayCamaleon = parseFloat(document.getElementById('spray-camaleon').value);
-    const cantidadPartesEsteticas = parseFloat(document.getElementById('partes-esteticas').value);
+    const cantidadRuedas = obtenerCantidad('ruedas');
+    const cantidadGuardabarros = obtenerCantidad('guardabarros');
+    const cantidadFaldones = obtenerCantidad('faldones');
+    const cantidadParachoquesFrontal = obtenerCantidad('parachoques-frontal');
+    const cantidadAleron = obtenerCantidad('aleron');
+    const cantidadSuspension = obtenerCantidad('suspension');
+    const cantidadFrenos = obtenerCantidad('frenos');
+    const cantidadParachoquesTrasero = obtenerCantidad('parachoques-trasero');
+    const cantidadMotor = obtenerCantidad('motor');
+    const cantidadCapot = obtenerCantidad('capot');
+    const cantidadTurbo = obtenerCantidad('turbo');
+    const cantidadBocina = obtenerCantidad('bocina');
+    const cantidadCajaDeCambios = obtenerCantidad('caja-de-cambios');
+    const cantidadXenon = obtenerCantidad('xenon');
+    const cantidadVidriosPolarizados = obtenerCantidad('vidrios-polarizados');
+    const cantidadDisenoDeNeon = obtenerCantidad('diseno-de-neon');
+    const cantidadPlacaNueva = obtenerCantidad('placa-nueva');
+    const cantidadExtras = obtenerCantidad('extras');
+    const cantidadLivery = obtenerCantidad('livery');
+    const cantidadPinturaPrimaria = obtenerCantidad('pintura-primaria');
+    const cantidadPinturaSecundaria = obtenerCantidad('pintura-secundaria');
+    const cantidadTipoDePintura = obtenerCantidad('tipo-de-pintura');
+    const cantidadVolante = obtenerCantidad('volante');
+    const cantidadColorDeHumo = obtenerCantidad('color-de-humo');
+    const cantidadInterior = obtenerCantidad('interior');
+    const cantidadTablero = obtenerCantidad('tablero');
+    const cantidadNeonesActivos = obtenerCantidad('neones-activos');
+    const cantidadColorDeXenon = obtenerCantidad('color-de-xenon');
+    const cantidadColorNeon = obtenerCantidad('color-neon');
+    const cantidadSprayCamaleon = obtenerCantidad('spray-camaleon');
+    const cantidadPartesEsteticas = obtenerCantidad('partes-esteticas');
 
     // Calcular el precio total para cada item
     const precioTotalRuedas = calcularPrecioItem('ruedas', cantidadRuedas);
@@ -188,7 +188,7 @@ function calcularMaterialesTotales() {
     const materialesTotales = {};
 
     for (const item in materiales) {
-        const cantidad = parseFloat(document.getElementById(item).value);
+        const cantidad = obtenerCantidad(item);
         actualizarMaterialesTotales(materialesTotales, item, cantidad);
     }
 
@@ -205,4 +205,9 @@ function actualizarMaterialesTotales(materialesTotales, item, cantidad) {
             materialesTotales[material] = materialesItem[material] * cantidad;
         }
     }
+}
+
+function obtenerCantidad(id) {
+    const valor = parseFloat(document.getElementById(id).value);
+    return isNaN(valor) ? 0 : valor;
 }
